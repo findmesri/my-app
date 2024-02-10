@@ -17,7 +17,7 @@ node{
    stage('Build Docker Image'){
    sh 'docker build -t saidamo/myweb:0.0.2 .'
    }
-   stage('Docker Image Push'){
+   stage('Docker  Image Push'){
    withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
    sh "docker login -u saidamo -p ${dockerPassword}"
     }
